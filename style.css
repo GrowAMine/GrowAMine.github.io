@@ -7,6 +7,21 @@ body {
     padding: 0;
 }
 
+.download-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none; /* Предотвращает выделение текста */
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
 .container, .features, .pricing, .socials, footer {
     padding: 50px 20px;
 }
