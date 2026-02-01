@@ -20,11 +20,35 @@
         </nav>
     </header>
 
-    <div class="container fade-in">
-        <h1 class="site-title">Grow a Mine</h1>
-        <p>Лучший современный и уникальный сервер в Майнкрафте</p>
-        <a href="#" class="download-btn">Growamine118.endercloud.host</a>
-    </div>
+<div class="container fade-in">
+    <h1 class="site-title">Grow a Mine</h1>
+    <p>Лучший современный и уникальный сервер в Майнкрафте</p>
+    <a href="#" class="download-btn" id="serverIP">Growamine118.endercloud.host</a>
+</div>
+
+<script>
+document.getElementById('serverIP').addEventListener('click', function(e) {
+    e.preventDefault(); // Предотвращаем переход по ссылке
+    
+    const ip = this.textContent;
+    
+    navigator.clipboard.writeText(ip).then(() => {
+        // Сохраняем оригинальный текст
+        const originalText = this.textContent;
+        
+        // Показываем уведомление
+        this.textContent = '✓ Скопировано!';
+        
+        // Возвращаем IP обратно через 2 секунды
+        setTimeout(() => {
+            this.textContent = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('Ошибка копирования:', err);
+        alert('Не удалось скопировать IP');
+    });
+});
+</script>
 
     <section id="features" class="features fade-in">
         <h2>Что нужно знать?</h2>
